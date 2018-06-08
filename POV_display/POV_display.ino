@@ -1,3 +1,21 @@
+/*
+	Вращающийся дисплей на адресной ленте WS2812
+	Добавление своих изображений:
+		- Формат bmp
+		- Разрешение 200х200px
+	Настройки программы (из видео):
+		- 36 сегментов
+		- Размер сегмента не важен
+		- 10 градусов
+		- 1 градус в отсчёте
+		- Глубина цвета 16 бит
+	Настройки здесь:
+		- Разрешение 10 градусов
+		- Скорость мотора 160 (это 160/255 * 12 Вольт)
+		- Лента 144 диода/метр, полметра
+		- Кнопка 2 не задействована
+*/
+
 #define NUM_LEDS 72     // количество светодиодов
 #define BRIGHTNESS 200  // яркость
 #define MOTOR_MAX 160   // скорость мотора (0-255)
@@ -6,7 +24,7 @@
 #define PODGON 1.3      // коэф. подгона (у, блет)
 #define OFFSET 240      // сдвиг по углу (0-360)
 #define NUM_FRAMES 8    // количество фреймов анимации
-#define FRAME_RATE 30   // количество перерисовок между сменой кадра
+#define FRAME_RATE 60   // количество перерисовок между сменой кадра
 
 #define PIN 4           // пин ленты
 #define MOS 3           // пин мосфета (мотора)
@@ -93,7 +111,7 @@ void timer_interrupt() {
 // из PROGMEM получаем цвета пикселей с глубиной 16 бит, переводим в 24 бита (спасибо adafruit) и включаем ленту
 void setPix(byte i, int counter, int this_pix) {
   switch (this_frame) {
-    case 0: strip.setPixelColor(i, expandColor(pgm_read_word(&(frame0[counter][this_pix]))));
+    case 0: strip.setPixelColor(i, expandColor(pgm_read_word(&(frame1[counter][this_pix]))));
       break;
     case 1: strip.setPixelColor(i, expandColor(pgm_read_word(&(frame1[counter][this_pix]))));
       break;
@@ -144,7 +162,7 @@ void loop() {
 
     // выбор кадра и скорости отображения
     count_frame++;
-    if (count_frame > FRAME_RATE) {
+    if (count_frame >= FRAME_RATE) {
       count_frame = 0;
       this_frame = ++this_frame % NUM_FRAMES;
     }
@@ -177,6 +195,8 @@ void loop() {
       analogWrite(MOS, 0);
       Timer1.stop();
       Timer1.detachInterrupt();
+      delay(500);
+      timer_isr = false;
       // не работает нихера, лента всё равно горит
       strip.clear();
       strip.show();
