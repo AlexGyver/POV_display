@@ -95,9 +95,11 @@ void setup() {
 }
 
 void hall() {   // тут у нас тахометр
-  if (micros() - timer > 30000) {     // фильтруем ложные
-    new_period = micros() - timer;    // вот он вот он период оборота
-    timer = micros();
+  // Измеряем время сразу, так как дальше оно может изменится
+  unsigned long curr_micros = micros(); 
+  if (curr_micros  - timer > 30000) {     // фильтруем ложные
+    new_period = curr_micros  - timer;    // вот он вот он период оборота
+    timer = curr_micros;
     hall_isr = true;
   }
 }
