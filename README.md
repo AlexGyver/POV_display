@@ -37,13 +37,13 @@
 ### Ссылки оставлены на магазины, с которых я закупаюсь уже не один год
 ### Почти все компоненты можно взять в магазине WAVGAT по первым ссылкам
 * Arduino NANO 328p – искать
-* https://ali.ski/tI7blh
-* https://ali.ski/O4yTxb
-* https://ali.ski/6_rFIS
-* https://ali.ski/gb92E-
+* https://ali.ski/HaN-0
+* https://ali.ski/maZOpf
+* https://ali.ski/KMfP1S
+* https://ali.ski/eH1faq
 * Адресная лента (под нарезку)
-* https://ali.ski/crrqi1
-* https://ali.ski/2I3be
+* https://ali.ski/o0nGl
+* https://ali.ski/HmhONd
 * Купить в РФ, 60 свет/метр, 30 свет/метр
 * Black PCB / White PCB – цвет подложки ленты, чёрная / белая. В видео была чёрная
 * 1m/5m – длина ленты в метрах (чтобы заказать 2 метра, берите два заказа 1m, очевидно)
@@ -53,10 +53,10 @@
 * IP67 лента полностью в силиконовом коробе
 * Постфикс ECO – лента чуть более низкого качества, меньше меди, на длинной ленте будет сильно проседать яркость
 * Лента как на видео: White PCB 144. Берите IP30
-* Датчик Холла https://ali.ski/R0w7s или такой https://ali.ski/zBqc8
-* Мотор https://ali.ski/6Ynot3
-* Повышайка https://ali.ski/PL0ghf
-* Мосфет модуль (вместо голого фета) https://ali.ski/D2_DMh
+* Датчик Холла https://ali.ski/NGA5t или такой https://ali.ski/VToaVM
+* Мотор https://ali.ski/yCxl7
+* Повышайка https://ali.ski/ukWoXq
+* Мосфет модуль (вместо голого фета) https://ali.ski/fhAlhK
 * Штекер https://www.chipdip.ru/product/sp20-6.35s-n
 * Гнездо https://www.chipdip.ru/product/st-008s-04
 * Блок питания 5V – любой зарядник для смартфона
